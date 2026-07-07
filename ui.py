@@ -98,9 +98,14 @@ def scarica_file_creato(percorso_file, label_pulsante, mime_type):
             mime=mime_type
         )
 
+def cambia_pagina(nome_pagina):
+    st.session_state.pagina_corrente = nome_pagina
+
 def main():
     st.set_page_config(page_title="Simulatore Agricolo", layout="wide")
 
+    if "pagina_corrente" not in st.session_state:
+        st.session_state.pagina_corrente = "Home"
     if "risultati_singola" not in st.session_state:
         st.session_state.risultati_singola = None
     if "risultati_1000" not in st.session_state:
@@ -111,17 +116,25 @@ def main():
         st.session_state.risultati_seed = None
         st.session_state.seed_usato = None
 
-    opzioni_menu = [
-        "Simulazione singola casuale",
-        "1000 simulazioni con analisi statistica",
-        "Simulazione con parametri manuali",
-        "Simulazione con seed fisso (riproducibile)"
-    ]
+    if st.session_state.pagina_corrente == "Home":
+        st.title("Simulatore Agricolo")
+        st.write("Seleziona la modalità di simulazione da avviare:")
+        
+        st.write("")
+        st.write("")
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            st.button("Simulazione singola casuale", on_click=cambia_pagina, args=("singola",), width="stretch")
+            st.button("1000 simulazioni con analisi", on_click=cambia_pagina, args=("mille",), width="stretch")
+        with col2:
+            st.button("Simulazione con parametri manuali", on_click=cambia_pagina, args=("manuale",), width="stretch")
+            st.button("Simulazione con seed fisso", on_click=cambia_pagina, args=("seed",), width="stretch")
 
-    scelta = st.sidebar.radio("Menu Principale", opzioni_menu)
-
-    if scelta == opzioni_menu[0]:
+    elif st.session_state.pagina_corrente == "singola":
+        st.button("<- Torna alla Dashboard", on_click=cambia_pagina, args=("Home",))
         st.header("Simulazione Singola Casuale")
+        
         if st.button("Avvia Simulazione", type="primary"):
             st.session_state.risultati_singola = sim.esegui_simulazione()
             exp.esporta_excel_singola_random(st.session_state.risultati_singola, "simulazione_random.xlsx")
@@ -130,8 +143,10 @@ def main():
             mostra_risultati_singola(st.session_state.risultati_singola)
             scarica_file_creato("simulazione_random.xlsx", "Scarica Risultati in Excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-    elif scelta == opzioni_menu[1]:
+    elif st.session_state.pagina_corrente == "mille":
+        st.button("<- Torna alla Dashboard", on_click=cambia_pagina, args=("Home",))
         st.header("Analisi Statistica su 1000 Simulazioni")
+        
         if st.button("Avvia 1000 Simulazioni", type="primary"):
             with st.spinner("Esecuzione delle simulazioni in corso. Potrebbe richiedere qualche secondo..."):
                 st.session_state.risultati_1000 = sim.esegui_simulazioni_multiple(1000)
@@ -146,12 +161,14 @@ def main():
             with col_btn2:
                 scarica_file_creato("analisi_grafici.pdf", "Scarica Grafici in PDF", "application/pdf")
 
-    elif scelta == opzioni_menu[2]:
+    elif st.session_state.pagina_corrente == "manuale":
+        st.button("<- Torna alla Dashboard", on_click=cambia_pagina, args=("Home",))
         st.header("Simulazione con Parametri Manuali")
         
         col_m1, col_m2 = st.columns(2)
         scenario_raccolta = col_m1.selectbox("Scenario di raccolta (Mietitrebbie)", ["standard", "intensiva"])
         scenario_climatico = col_m2.selectbox("Annata climatica", ["secca", "umida"])
+        
         st.subheader("Resa Colture")
         tipo_resa = st.radio("Impostazione resa", ["Uguale per tutte", "Diversa per ogni coltura"])
         
@@ -177,8 +194,10 @@ def main():
             mostra_risultati_singola(st.session_state.risultati_manuale)
             scarica_file_creato("simulazione_manuale.xlsx", "Scarica Risultati Manuali in Excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-    elif scelta == opzioni_menu[3]:
+    elif st.session_state.pagina_corrente == "seed":
+        st.button("<- Torna alla Dashboard", on_click=cambia_pagina, args=("Home",))
         st.header("Simulazione con Seed Fisso")
+        
         seed_inserito = st.number_input("Inserisci il seed (numero intero)", value=42, step=1, format="%d")
         
         if st.button("Avvia Simulazione", type="primary"):
