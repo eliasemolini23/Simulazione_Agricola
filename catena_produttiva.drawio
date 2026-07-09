@@ -1,0 +1,104 @@
+<mxfile host="Electron">
+  <diagram name="Catena produttiva" id="catena-produttiva-1">
+    <mxGraphModel dx="838" dy="657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="950" pageHeight="1350" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=16;" value="CATENA PRODUTTIVA&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="440" x="250" as="geometry" />
+        </mxCell>
+        <mxCell id="raccolta" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="1 · RACCOLTA&lt;br&gt;&lt;i&gt;mais · girasole · soia (in parallelo)&lt;br&gt;100 ha per coltura&lt;/i&gt;" vertex="1">
+          <mxGeometry height="66" width="240" x="355" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pulizia" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="2 · PULIZIA&lt;br&gt;&lt;i&gt;impianto condiviso — logica FIFO&lt;br&gt;perdita: mais 1–5% · girasole 2–7% · soia 1–4%&lt;/i&gt;" vertex="1">
+          <mxGeometry height="66" width="240" x="355" y="168" as="geometry" />
+        </mxCell>
+        <mxCell id="essiccazione" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="3 · ESSICCAZIONE&lt;br&gt;&lt;i&gt;impianto condiviso — logica FIFO&lt;br&gt;perdita = acqua evaporata (variabile)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="66" width="240" x="355" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="nota-ess" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Fase saltata se&lt;br&gt;umidità iniziale ≤ target" vertex="1">
+          <mxGeometry height="60" width="180" x="650" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="stoccaggio" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="4 · STOCCAGGIO&lt;br&gt;&lt;i&gt;silos dedicati per coltura — nessuna coda&lt;br&gt;perdita fissa 1%&lt;/i&gt;" vertex="1">
+          <mxGeometry height="66" width="240" x="355" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="divisione" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="5 · DIVISIONE&lt;br&gt;LINEE A / B" vertex="1">
+          <mxGeometry height="100" width="180" x="385" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="banner-a" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=12;fontColor=#82b366;" value="LINEA A — Confezionamento diretto" vertex="1">
+          <mxGeometry height="20" width="260" x="70" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="confA" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="6 · CONFEZIONAMENTO&lt;br&gt;DIRETTO&lt;br&gt;&lt;i&gt;impianto condiviso — logica FIFO&lt;br&gt;sacchi da 25 kg&lt;/i&gt;" vertex="1">
+          <mxGeometry height="84" width="220" x="90" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="prodA" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#eef7ec;strokeColor=#82b366;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;" value="PRODOTTI LINEA A&lt;br&gt;&lt;br&gt;• Chicchi di Mais Confezionati&lt;br&gt;• Semi di Girasole Confezionati&lt;br&gt;• Granella di Soia Confezionata" vertex="1">
+          <mxGeometry height="130" width="220" x="90" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="banner-b" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=12;fontColor=#9673a6;" value="LINEA B — Macinazione" vertex="1">
+          <mxGeometry height="20" width="300" x="580" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="bivioB" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="BIVIO&lt;br&gt;LINEA B" vertex="1">
+          <mxGeometry height="80" width="150" x="660" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="tostatura" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="7 · TOSTATURA&lt;br&gt;&lt;i&gt;solo soia — perdita 1,5%&lt;/i&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="540" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="macinazione" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="8 · MACINAZIONE&lt;br&gt;&lt;i&gt;impianto condiviso — logica FIFO&lt;br&gt;scarti: mais 4% · girasole 7% · soia 10%&lt;/i&gt;" vertex="1">
+          <mxGeometry height="72" width="210" x="635" y="905" as="geometry" />
+        </mxCell>
+        <mxCell id="confB" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="9 · CONFEZIONAMENTO&lt;br&gt;FARINE&lt;br&gt;&lt;i&gt;impianto condiviso — logica FIFO&lt;br&gt;sacchi da 25 kg&lt;/i&gt;" vertex="1">
+          <mxGeometry height="84" width="210" x="635" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="prodB" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f3eef6;strokeColor=#9673a6;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=11;" value="PRODOTTI LINEA B&lt;br&gt;&lt;br&gt;• Farina di Mais&lt;br&gt;• Farina di Girasole&lt;br&gt;• Farina di Soia Tostata" vertex="1">
+          <mxGeometry height="130" width="210" x="635" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="raccolta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="pulizia">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="pulizia" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="essiccazione">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="essiccazione" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="stoccaggio">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-nota" edge="1" parent="1" source="nota-ess" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=none;strokeColor=#d6b656;" target="essiccazione">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="stoccaggio" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="divisione">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="divisione" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=10;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="confA" value="quota Linea A">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="divisione" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="bivioB" value="quota Linea B">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="bivioB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=10;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="tostatura" value="soia">
+          <mxGeometry relative="1" x="0.0239" y="-10" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="tostatura" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="macinazione" value="soia tostata">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="bivioB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="macinazione" value="mais · girasole">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="680" />
+              <mxPoint x="910" y="895" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="confA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="prodA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="macinazione" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="confB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="confB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="prodB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
