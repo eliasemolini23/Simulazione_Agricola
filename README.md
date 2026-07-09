@@ -10,6 +10,8 @@ Il simulatore è utilizzabile online, senza installare nulla:
 
 **https://simulazione-agricola.streamlit.app**
 
+![La dashboard dell'applicazione web](screenshot_app.png)
+
 Quattro modalità disponibili: simulazione singola casuale, analisi statistica su 1000 simulazioni, simulazione con parametri manuali, simulazione con seed fisso (riproducibile). Ogni modalità permette di scaricare i risultati in Excel (e, per l'analisi, i grafici in PDF).
 
 ## Diagramma della catena produttiva
