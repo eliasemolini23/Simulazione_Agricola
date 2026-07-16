@@ -1,8 +1,8 @@
 # Simulazione Agricola
 
-Project work per il tema n. 1 "La digitalizzazione dell'impresa" — traccia n. 15: "Sviluppo di un codice Python per simulare un processo produttivo nel settore primario".
+Project work per il tema n. 1 "La digitalizzazione dell'impresa" traccia n. 15: "Sviluppo di un codice Python per simulare un processo produttivo nel settore primario".
 
-Il modello simula la catena produttiva di tre colture — **mais, girasole e soia** — su 100 ettari ciascuna: dalla raccolta al confezionamento, attraverso 9 fasi organizzate in due linee produttive (confezionamento diretto e trasformazione in farina). Cinque impianti sono condivisi tra le colture e gestiti con **code FIFO**: le attese che ne derivano permettono di individuare il collo di bottiglia del processo tramite analisi statistica su 1000 simulazioni.
+Il modello simula la catena produttiva di tre colture — **mais, girasole e soia**, su 100 ettari ciascuna: dalla raccolta al confezionamento, attraverso 9 fasi organizzate in due linee produttive (confezionamento diretto e trasformazione in farina). Cinque impianti sono condivisi tra le colture e gestiti con **code FIFO**: le attese che ne derivano permettono di individuare il collo di bottiglia del processo tramite analisi statistica su 1000 simulazioni.
 
 ## Applicazione web
 
